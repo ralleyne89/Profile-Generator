@@ -1,4 +1,11 @@
-let generateHTML = require("./generateHTML")
+// $(document).ready(function(){
+//   const apiUrl = "https://api.github.com";
+//   const apiKey = "";
+
+// })
+
+const generateHTML = require("./generateHTML")
+
 
 var inquirer = require("inquirer");
 var fs = require("fs");
@@ -13,14 +20,22 @@ inquirer
       name: "color",
       message: "which color would you like?",
       choices: ["red", "green", "blue", "pink"]
+    },{
+      type: "input",
+      name: "bio",
+      message: "Tell me a little about yourself"
+    },{
+      type: "input",
+      name: "github",
+      message: "What is your Github username?"
     }
   ])
   .then(function(data) {
     var filename =
       data.name
-        .toLowerCase()
+        .toLowerCase() 
         .split(" ")
-        .join("") + ".pdf";
+        .join("") + ".html";
 
     fs.writeFile(filename, JSON.stringify(data, null, "\t"), function(err) {
       if (err) {
