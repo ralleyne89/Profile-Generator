@@ -25,7 +25,7 @@ const colors = {
   }
 };
 
-function generateHTML(data) {
+const generateHtml = () => {
   return `<!DOCTYPE html>
 <html lang="en">
    <head>
@@ -35,6 +35,15 @@ function generateHTML(data) {
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"/>
       <link href="https://fonts.googleapis.com/css?family=BioRhyme|Cabin&display=swap" rel="stylesheet">
       <title>Document</title>
+      </head>
+      <body>
+
+
+
+
+
+
+      
       <style>
           @page {
             margin: 0;
@@ -170,5 +179,12 @@ function generateHTML(data) {
             zoom: .75; 
           } 
          }
-      </style>`
+      </style>
+      </body>
+      </html>`
+        }
+
+        module.exports = {
+          generateHtml: generateHtml,
+          colors: colors
         }
