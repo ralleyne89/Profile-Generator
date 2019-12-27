@@ -1,0 +1,59 @@
+body {
+  background-color: rgb(162, 169, 252);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0 auto;
+}
+
+.round-img {
+    display: flex;
+    border-radius: 50%;
+    border: 5px solid yellow;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.3), 0 0 80px rgba(0, 0, 0, 0.1) inset;
+    margin: 20px auto;
+    top: 40px;
+  }
+
+#big-square {
+  background-color: lightcoral;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  padding-bottom: 10px;
+  padding-top: 80px;
+  position: relative;
+  bottom: 90px;
+  margin: 0 auto;
+  width: 70%;
+  z-index: -1;
+}
+
+#mid-section {
+    position: absolute;
+    background-color: white;
+    padding: 110px 0;
+    width: 100%;
+    top: 510px;
+    z-index: -2;
+    margin-bottom: 180px;
+}
+
+.header {
+    text-align: center;
+}
+
+#public-repo, #followers, #stars, #following {
+    color: white;
+    background-color: lightcoral;
+    padding: 20px;
+    font-weight: bolder;
+    text-align: center;
+    border-radius: 5px;
+    margin: 5% 15px;
+}
+
+.options {
+    display: flex;
+    float: left;
+    width: 100%;
+    justify-content: center;
+}

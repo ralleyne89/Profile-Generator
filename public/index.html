@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.js"
+      integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <img
+      src="https://via.placeholder.com/300"
+      alt="image-here"
+      class="round-img"
+      width="300"
+    />
+    <div id="big-square">
+      <h1>Hi!</h1>
+      <h2>
+        My name is
+        <span id="name">
+          <script>
+            ${username}
+          </script>
+        </span>
+      </h2>
+      <br />
+      <b id="work-info">Currently @ (input jquery work data)</b>
+      <br />
+      <p id="location">
+        (input jquery location data) <i></i>GitHub <i>Blog</i>
+      </p>
+    </div>
+    <div id="mid-section">
+      <h2 class="header">(Input header with jquery)</h2>
+      <div class="options">
+        <p id="public-repo">Public Repository<br />(input jquery repo data)</p>
+        <p id="followers">Followers<br />(input jquery followers data)</p>
+        <p id="stars">GitHub Stars <br />(input jquery stars data)</p>
+        <p id="following">Following <br />(input jquery following data)</p>
+      </div>
+    </div>
+    <footer id="footer"></footer>
+  </body>
+  <script src="../js/index.js"></script>
+</html>

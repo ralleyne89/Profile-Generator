@@ -25,7 +25,8 @@ const colors = {
   }
 };
 
-const generateHtml = () => {
+function generateHtml (data) {
+  
   return `<!DOCTYPE html>
 <html lang="en">
    <head>
@@ -39,6 +40,29 @@ const generateHtml = () => {
       <body>
 
 
+      <img src=${data.avatar_url} alt="image-here" class="round-img" width="300">
+      <div id="big-square">
+          <h1>Hi!</h1>
+          <h2>My name is <span id="name">
+              <script>
+              ${data.name}
+              </script>
+              </span></h2>
+          <br>
+          <b id="work-info">Currently @ ${data.company}</b>
+          <br>
+          <p id="location">${data.location} <i></i>GitHub <i>Blog: ${data.blog}</i></p>
+      </div>
+      <div id="mid-section">
+          <h2 class="header">${data.bio}</h2>
+          <div class="options">
+              <p id="public-repo">Public Repository<br>${data.public_repos}</p>
+              <p id="followers">Followers<br>${data.followers}</p>
+              <p id="stars">GitHub Stars <br>(input jquery stars data)</p>
+              <p id="following">Following <br>${data.following}</p>
+          </div>
+      </div>
+      <footer id="footer"></footer>
 
 
 
@@ -184,7 +208,6 @@ const generateHtml = () => {
       </html>`
         }
 
-        module.exports = {
-          generateHtml: generateHtml,
-          colors: colors
-        }
+       
+
+        module.exports = generateHtml;
