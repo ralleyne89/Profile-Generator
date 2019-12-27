@@ -25,8 +25,7 @@ const colors = {
   }
 };
 
-function generateHtml (colors, color, response) {
-  
+function generateHtml(colors, color, response) {
   return `<!DOCTYPE html>
 <html lang="en">
    <head>
@@ -43,15 +42,15 @@ function generateHtml (colors, color, response) {
       <img src=${response.data.avatar_url} alt="image-here" class="round-img" width="300">
       <div id="big-square">
           <h1>Hi!</h1>
-          <h2>My name is <span id="name">
-              <script>
+          <h2>My name is 
+          <span id="name">
               ${response.data.name}
-              </script>
-              </span></h2>
+              </span>
+              </h2>
           <br>
           <b id="work-info">Currently @ ${response.data.company}</b>
           <br>
-          <p id="location">${response.data.location} <i></i>GitHub <i>Blog: ${response.data.blog}</i></p>
+          <p id="location">${response.data.location} <i></i>GitHub <i></i>Blog ${response.data.blog}<i></i></p>
       </div>
       <div id="mid-section">
           <h2 class="header">${response.data.bio}</h2>
@@ -62,155 +61,78 @@ function generateHtml (colors, color, response) {
               <p id="following">Following <br>${response.data.following}</p>
           </div>
       </div>
-      <footer id="footer"></footer>
+      <footer id="footer" style="background-color: ${colors[color].wrapperBackground}"></footer>
 
 
 
 
       
       <style>
-          @page {
-            margin: 0;
-          }
-         *,
-         *::after,
-         *::before {
-         box-sizing: border-box;
-         }
-         html, body {
-         padding: 0;
-         margin: 0;
-         }
-         html, body, .wrapper {
-         height: 100%;
-         }
-         .wrapper {
-         background-color: ${colors[data.color].wrapperBackground};
-         padding-top: 100px;
-         }
-         body {
-         background-color: white;
-         -webkit-print-color-adjust: exact !important;
-         font-family: 'Cabin', sans-serif;
-         }
-         main {
-         background-color: #E9EDEE;
-         height: auto;
-         padding-top: 30px;
-         }
-         h1, h2, h3, h4, h5, h6 {
-         font-family: 'BioRhyme', serif;
-         margin: 0;
-         }
-         h1 {
-         font-size: 3em;
-         }
-         h2 {
-         font-size: 2.5em;
-         }
-         h3 {
-         font-size: 2em;
-         }
-         h4 {
-         font-size: 1.5em;
-         }
-         h5 {
-         font-size: 1.3em;
-         }
-         h6 {
-         font-size: 1.2em;
-         }
-         .photo-header {
-         position: relative;
-         margin: 0 auto;
-         margin-bottom: -50px;
-         display: flex;
-         justify-content: center;
-         flex-wrap: wrap;
-         background-color: ${colors[data.color].headerBackground};
-         color: ${colors[data.color].headerColor};
-         padding: 10px;
-         width: 95%;
-         border-radius: 6px;
-         }
-         .photo-header img {
-         width: 250px;
-         height: 250px;
-         border-radius: 50%;
-         object-fit: cover;
-         margin-top: -75px;
-         border: 6px solid ${colors[data.color].photoBorderColor};
-         box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
-         }
-         .photo-header h1, .photo-header h2 {
-         width: 100%;
-         text-align: center;
-         }
-         .photo-header h1 {
-         margin-top: 10px;
-         }
-         .links-nav {
-         width: 100%;
-         text-align: center;
-         padding: 20px 0;
-         font-size: 1.1em;
-         }
-         .nav-link {
-         display: inline-block;
-         margin: 5px 10px;
-         }
-         .workExp-date {
-         font-style: italic;
-         font-size: .7em;
-         text-align: right;
-         margin-top: 10px;
-         }
-         .container {
-         padding: 50px;
-         padding-left: 100px;
-         padding-right: 100px;
-         }
-
-         .row {
-           display: flex;
-           flex-wrap: wrap;
-           justify-content: space-between;
-           margin-top: 20px;
-           margin-bottom: 20px;
-         }
-
-         .card {
-           padding: 20px;
-           border-radius: 6px;
-           background-color: ${colors[data.color].headerBackground};
-           color: ${colors[data.color].headerColor};
-           margin: 20px;
-         }
-         
-         .col {
-         flex: 1;
-         text-align: center;
-         }
-
-         a, a:hover {
-         text-decoration: none;
-         color: inherit;
-         font-weight: bold;
-         }
-
-         @media print { 
-          body { 
-            zoom: .75; 
-          } 
-         }
+      body {
+        background-color: ${colors[color].wrapperBackground};
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        margin: 0 auto;
+      }
+      
+      .round-img {
+          display: flex;
+          border-radius: 50%;
+          border: 5px solid ${colors[color].photoBorderColor};
+          box-shadow: 0 5px 4px rgba(0, 0, 0, 0.3), 0 0 80px rgba(0, 0, 0, 0.1) inset;
+          margin: 20px auto;
+          top: 40px;
+        }
+      
+      #big-square {
+        background-color: ${colors[color].headerBackground};
+        text-align: center;
+        border-radius: 5px;
+        color: white;
+        padding-bottom: 10px;
+        padding-top: 80px;
+        position: relative;
+        bottom: 90px;
+        margin: 0 auto;
+        width: 70%;
+        z-index: -1;
+      }
+      
+      #mid-section {
+          position: absolute;
+          background-color: white;
+          padding: 110px 0;
+          width: 100%;
+          top: 510px;
+          z-index: -2;
+          margin-bottom: 180px;
+      }
+      
+      .header {
+          text-align: center;
+      }
+      
+      #public-repo, #followers, #stars, #following {
+          color: white;
+          background-color: ${colors[color].headerBackground};
+          padding: 20px;
+          font-weight: bolder;
+          text-align: center;
+          border-radius: 5px;
+          margin: 5% 15px;
+      }
+      
+      .options {
+          display: flex;
+          float: left;
+          width: 100%;
+          justify-content: center;
+      }
       </style>
       </body>
-      </html>`
-        }
+      </html>`;
+}
 
-       
-
-        module.exports = {
-          generateHtml: generateHtml,
-          colors: colors
-        }
+module.exports = {
+  generateHtml: generateHtml,
+  colors: colors
+};
